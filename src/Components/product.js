@@ -3,12 +3,11 @@ import PropTypes from 'prop-types';
 
 function Product(props) {
     const { item, addToCart } = props;
-    console.log(props)
     return (
         <div className='product'>
-            <img src={item.imageUrl} />
+            <img src={item.image} />
             <div className='product-info'>
-                <h4>{item.title}</h4>
+                <h4>{item.name}</h4>
                 <p>{item.description}</p>
                 <p>{item.price}</p>
                 <button onClick={() => { props.addToCart(item) }}>Add to Cart</button>
@@ -21,9 +20,9 @@ export default Product;
 Product.propTypes = {
     item: PropTypes.shape({
         id: PropTypes.number.isRequired,
-        title: PropTypes.string.isRequired,
+        name: PropTypes.string.isRequired,
         description: PropTypes.string.isRequired,
         price: PropTypes.number.isRequired,
-        imageUrl: PropTypes.string.isRequired
+        image: PropTypes.string.isRequired
     })
 }

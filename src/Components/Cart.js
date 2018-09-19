@@ -5,9 +5,9 @@ function CartItem(props){
     const {item} = props;
     return(
         <div className='product'>
-              <img src={item.imageUrl} />
+              <img src={item.image} />
               <div className='product-info'>
-                <h4>{item.title}</h4>
+                <h4>{item.name}</h4>
                 <p>{item.description}</p>
                 <p>{item.price}</p>
               </div>
@@ -19,9 +19,9 @@ export default CartItem;
 CartItem.propTypes = {
     item: PropTypes.shape({
         id: PropTypes.number.isRequired,
-        title: PropTypes.string.isRequired,
+        name: PropTypes.string.isRequired,
         description: PropTypes.string.isRequired,
         price: PropTypes.number.isRequired,
-        imageUrl: PropTypes.string.isRequired
+        image: PropTypes.string.isRequired
     })
 }
